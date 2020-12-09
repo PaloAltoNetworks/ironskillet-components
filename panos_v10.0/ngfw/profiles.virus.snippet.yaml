@@ -1,6 +1,6 @@
 # panos antivirus configuration snippets
 
-name: panos_ngfw_profile_antivirus_9_1
+name: panos_ngfw_profile_antivirus_10_0
 label: PAN_OS NGFW Profiles - AntiVirus
 description: |-
     reference AntiVirus configuration snippets
@@ -14,7 +14,7 @@ variables:
 
 snippets:
 
--   name: ironskillet_alert_all
+-   name: ironskillet_antivirus_alert_all
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus
     element: |-
       <entry name="Alert-Only-AV">
@@ -22,35 +22,53 @@ snippets:
           <entry name="ftp">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
           <entry name="http">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
           <entry name="http2">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
           <entry name="imap">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
           <entry name="pop3">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
           <entry name="smb">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
           <entry name="smtp">
             <action>alert</action>
             <wildfire-action>alert</wildfire-action>
+            <mlav-action>alert</mlav-action>
           </entry>
         </decoder>
+        <mlav-engine-filebased-enabled>
+          <entry name="Windows Executables">
+            <mlav-policy-action>enable(alert-only)</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 1">
+            <mlav-policy-action>enable(alert-only)</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 2">
+            <mlav-policy-action>enable(alert-only)</mlav-policy-action>
+          </entry>
+        </mlav-engine-filebased-enabled>
       </entry>
 
--   name: ironskillet_outbound
+-   name: ironskillet_antivirus_outbound
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus
     element: |-
       <entry name="Outbound-AV">
@@ -58,35 +76,53 @@ snippets:
           <entry name="ftp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http2">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="imap">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="pop3">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smb">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smtp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
         </decoder>
+        <mlav-engine-filebased-enabled>
+          <entry name="Windows Executables">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 1">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 2">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+        </mlav-engine-filebased-enabled>
       </entry>
 
--   name: ironskillet_inbound
+-   name: ironskillet_antivirus_inbound
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus
     element: |-
       <entry name="Inbound-AV">
@@ -94,35 +130,53 @@ snippets:
           <entry name="ftp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http2">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="imap">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="pop3">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smb">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smtp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
         </decoder>
+        <mlav-engine-filebased-enabled>
+          <entry name="Windows Executables">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 1">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 2">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+        </mlav-engine-filebased-enabled>
       </entry>
 
--   name: ironskillet_internal
+-   name: ironskillet_antivirus_internal
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus
     element: |-
       <entry name="Internal-AV">
@@ -130,67 +184,103 @@ snippets:
           <entry name="ftp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http2">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="imap">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="pop3">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smb">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smtp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
         </decoder>
+        <mlav-engine-filebased-enabled>
+          <entry name="Windows Executables">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 1">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 2">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+        </mlav-engine-filebased-enabled>
       </entry>
 
--   name: ironskillet_exception
+-   name: ironskillet_antivirus_exception
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/virus
     element: |-
       <entry name="Exception-AV">
         <decoder>
           <entry name="ftp">
             <action>reset-both</action>
-            <wildfire-action>default</wildfire-action>
+            <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http">
             <action>reset-both</action>
-            <wildfire-action>default</wildfire-action>
+            <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="http2">
             <action>reset-both</action>
-            <wildfire-action>default</wildfire-action>
+            <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="imap">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="pop3">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smb">
             <action>reset-both</action>
-            <wildfire-action>default</wildfire-action>
+            <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
           <entry name="smtp">
             <action>reset-both</action>
             <wildfire-action>reset-both</wildfire-action>
+            <mlav-action>reset-both</mlav-action>
           </entry>
         </decoder>
+        <mlav-engine-filebased-enabled>
+          <entry name="Windows Executables">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 1">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="PowerShell Script 2">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+        </mlav-engine-filebased-enabled>
         <description>Use this profile for rules needing modifications to the standard</description>
       </entry>
