@@ -1,6 +1,6 @@
 # panos url-filtering configuration snippets
 
-name: panos_ngfw_profile_urlFiltering
+name: panos_ngfw_profile_urlFiltering_9_1
 label: PAN_OS NGFW Profiles - URL Filtering
 description: |-
     reference URL Filtering configuration snippets

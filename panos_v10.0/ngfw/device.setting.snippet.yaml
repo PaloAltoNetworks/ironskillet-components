@@ -1,6 +1,6 @@
 # panos device setting configuration snippets
 
-name: panos_ngfw_device_setting_9_1
+name: panos_ngfw_device_setting_10_0
 label: PAN_OS NGFW Device - Setting
 description: |-
     reference device setting configuration snippets
@@ -23,8 +23,6 @@ snippets:
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
     element: |-
       <ctd>
-        <strip-x-fwd-for>yes</strip-x-fwd-for>
-        <x-forwarded-for>yes</x-forwarded-for>
         <tcp-bypass-exceed-queue>no</tcp-bypass-exceed-queue>
         <udp-bypass-exceed-queue>no</udp-bypass-exceed-queue>
       </ctd>

@@ -1,6 +1,6 @@
 # panos spyware configuration snippets
 
-name: panos_ngfw_profile_spyware
+name: panos_ngfw_profile_spyware_9_1
 label: PAN_OS NGFW Profiles - spyware
 description: |-
     reference spyware configuration snippets

@@ -1,0 +1,213 @@
+# panos device system configuration snippets
+
+name: panos_ngfw_device_system_orig_10_0
+label: PAN_OS NGFW Device - System
+description: |-
+    reference device system configuration snippets
+type: panos
+labels:
+    collection:
+      - PAN-OS
+
+variables:
+
+  - name: DNS_1
+    description: primary dns server
+    default: 8.8.8.8
+    type_hint: ip_address
+    toggle_hint:
+      source: config_dns
+      value: 'yes'
+  - name: DNS_2
+    description: secondary dns server
+    default: 8.8.4.4
+    type_hint: ip_address
+    toggle_hint:
+      source: config_dns
+      value: 'yes'
+
+  - name: NTP_1
+    description: primary NTP server
+    default: 0.pool.ntp.org
+    type_hint: text
+  - name: NTP_2
+    description: secondary NTP server
+    default: 1.pool.ntp.org
+    type_hint: text
+
+  - name: FW_NAME
+    description: Firewall hostname
+    default: panos-01
+    type_hint: text
+
+  - name: MGMT_TYPE
+    description: firewall management IP type
+    default: dhcp-client
+    type_hint: dropdown
+    help_text: select if the management interface will use DHCP or static configuration
+    dd_list:
+      - key: dhcp-client
+        value: dhcp-client
+      - key: static
+        value: static
+    toggle_hint:
+      source: config_mgmt_intf
+      value: 'yes'
+  - name: MGMT_IP
+    description: NGFW management IP
+    default: 192.0.2.6
+    type_hint: ip_address
+    toggle_hint:
+      source: MGMT_TYPE
+      value: static
+  - name: MGMT_MASK
+    description: NGFW management netmask
+    type_hint: ip_address
+    default: 255.255.255.0
+    toggle_hint:
+      source: MGMT_TYPE
+      value: static
+  - name: MGMT_DG
+    description: NGFW management default gateway
+    default: 192.0.2.7
+    type_hint: ip_address
+    toggle_hint:
+      source: MGMT_TYPE
+      value: static
+
+snippets:
+
+-   name: ironskillet_device_system_dynamic_updates
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <update-schedule>
+        <statistics-service>
+          <application-reports>yes</application-reports>
+          <threat-prevention-reports>yes</threat-prevention-reports>
+          <threat-prevention-pcap>yes</threat-prevention-pcap>
+          <threat-prevention-information>yes</threat-prevention-information>
+          <passive-dns-monitoring>yes</passive-dns-monitoring>
+          <url-reports>yes</url-reports>
+          <health-performance-reports>yes</health-performance-reports>
+          <file-identification-reports>yes</file-identification-reports>
+        </statistics-service>
+        <threats>
+          <recurring>
+            <every-30-mins>
+              <at>2</at>
+              <action>download-and-install</action>
+            </every-30-mins>
+            <threshold>48</threshold>
+          </recurring>
+        </threats>
+        <anti-virus>
+          <recurring>
+            <hourly>
+              <at>4</at>
+              <action>download-and-install</action>
+            </hourly>
+          </recurring>
+        </anti-virus>
+        <wildfire>
+          <recurring>
+            <every-min>
+              <action>download-and-install</action>
+            </every-min>
+          </recurring>
+        </wildfire>
+        <global-protect-datafile>
+          <recurring>
+            <hourly>
+              <at>40</at>
+              <action>download-and-install</action>
+            </hourly>
+          </recurring>
+        </global-protect-datafile>
+        <global-protect-clientless-vpn>
+          <recurring>
+            <hourly>
+              <at>50</at>
+              <action>download-and-install</action>
+            </hourly>
+          </recurring>
+        </global-protect-clientless-vpn>
+      </update-schedule>
+
+-   name: ironskillet_device_system_snmp
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <snmp-setting>
+        <access-setting>
+          <version>
+            <v3/>
+          </version>
+        </access-setting>
+      </snmp-setting>
+
+-   name: ironskillet_device_system_dns
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <dns-setting>
+        <servers>
+          <primary>{{ DNS_1 }}</primary>
+          <secondary>{{ DNS_2 }}</secondary>
+        </servers>
+      </dns-setting>
+
+-   name: ironskillet_device_system_ntp
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <ntp-servers>
+        <primary-ntp-server>
+          <ntp-server-address>{{ NTP_1 }}</ntp-server-address>
+        </primary-ntp-server>
+        <secondary-ntp-server>
+          <ntp-server-address>{{ NTP_2 }}</ntp-server-address>
+        </secondary-ntp-server>
+      </ntp-servers>
+
+-   name: ironskillet_device_system_login_banner
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <login-banner>You have accessed a protected system.
+      Log off immediately if you are not an authorized user.</login-banner>
+
+-   name: ironskillet_device_system_timezone
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <timezone>UTC</timezone>
+
+-   name: ironskillet_device_system_hostname
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      <hostname>{{ FW_NAME }}</hostname>
+
+-   name: ironskillet_device_system_mgmt_ip
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    element: |-
+      {%- if MGMT_TYPE == "static" %}
+      <type>
+        <static/>
+      </type>
+      <ip-address>{{ MGMT_IP }}</ip-address>
+      <netmask>{{ MGMT_MASK }}</netmask>
+      <default-gateway>{{ MGMT_DG }}</default-gateway>
+      {% elif MGMT_TYPE == "dhcp-client" %}
+      <type>
+         <dhcp-client>
+           <send-hostname>yes</send-hostname>
+           <send-client-id>no</send-client-id>
+           <accept-dhcp-hostname>no</accept-dhcp-hostname>
+           <accept-dhcp-domain>no</accept-dhcp-domain>
+         </dhcp-client>
+      </type>
+      {% else %}
+      <type>
+         <dhcp-client>
+           <send-hostname>yes</send-hostname>
+           <send-client-id>no</send-client-id>
+           <accept-dhcp-hostname>no</accept-dhcp-hostname>
+           <accept-dhcp-domain>no</accept-dhcp-domain>
+         </dhcp-client>
+      </type>
+      {% endif %}

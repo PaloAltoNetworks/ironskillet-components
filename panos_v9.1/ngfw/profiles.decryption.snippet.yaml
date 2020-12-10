@@ -1,6 +1,6 @@
 # panos decryption configuration snippets
 
-name: panos_ngfw_profile_decryption
+name: panos_ngfw_profile_decryption_9_1
 label: PAN_OS NGFW Profiles - decryption
 description: |-
     reference decryption configuration snippets
