@@ -1,7 +1,7 @@
 # panos file-blocking configuration snippets
 
 name: panos_ngfw_profile_file-blocking_9_1
-label: PAN_OS NGFW Profiles - file-blocking
+label: 9.1 PAN_OS NGFW Profiles - file-blocking
 description: |-
     reference file-blocking configuration snippets
 type: panos

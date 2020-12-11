@@ -3,7 +3,7 @@
 name: panos_ngfw_device_system_dns_10_0
 label: PAN_OS NGFW Device - System
 description: |-
-    reference device system configuration snippets
+    reference device system configuration snippets for DNS
 type: panos
 labels:
     collection:

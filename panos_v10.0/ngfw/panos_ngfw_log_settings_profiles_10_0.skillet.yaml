@@ -3,7 +3,7 @@
 name: panos_ngfw_log_settings_profiles_10_0
 label: PAN_OS NGFW Log Settings Profiles
 description: |-
-    reference log settings profiles configuration snippets
+    log forwarding profile object configuration
 type: panos
 labels:
     collection:

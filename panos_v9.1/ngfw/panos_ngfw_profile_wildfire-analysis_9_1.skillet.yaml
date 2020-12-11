@@ -1,7 +1,7 @@
 # panos wildfire-analysis configuration snippets
 
 name: panos_ngfw_profile_wildfire-analysis_9_1
-label: PAN_OS NGFW Profiles - wildfire-analysis
+label: 9.1 PAN_OS NGFW Profiles - wildfire-analysis
 description: |-
     reference wildfire-analysis configuration snippets
 type: panos

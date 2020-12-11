@@ -1,7 +1,7 @@
 # panos device setting configuration snippets
 
 name: panos_ngfw_device_setting_9_1
-label: PAN_OS NGFW Device - Setting
+label: 9.1 PAN_OS NGFW Device - Setting
 description: |-
     reference device setting configuration snippets
 type: panos
