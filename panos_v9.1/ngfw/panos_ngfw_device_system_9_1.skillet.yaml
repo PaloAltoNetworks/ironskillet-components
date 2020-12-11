@@ -41,7 +41,7 @@ snippets:
           <health-performance-reports>yes</health-performance-reports>
           <file-identification-reports>yes</file-identification-reports>
         </statistics-service>
-    </update-schedule>
+      </update-schedule>
 
 -   name: ironskillet_device_system_dynamic_updates
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
