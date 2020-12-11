@@ -115,8 +115,7 @@ snippets:
 -   name: ironskillet_device_system_login_banner
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     element: |-
-      <login-banner>You have accessed a protected system.
-      Log off immediately if you are not an authorized user.</login-banner>
+      <login-banner>You have accessed a protected system. Log off immediately if you are not an authorized user.</login-banner>
 
 -   name: ironskillet_device_system_timezone
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
