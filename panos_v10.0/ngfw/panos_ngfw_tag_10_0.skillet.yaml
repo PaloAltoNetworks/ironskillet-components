@@ -1,6 +1,6 @@
 # panos tags configuration snippets
 
-name: panos_ngfw_tag_10_0_bad
+name: panos_ngfw_tag_10_0
 label: PAN_OS NGFW Tags that can be used in policies
 description: |-
   reference tag configuration snippets
