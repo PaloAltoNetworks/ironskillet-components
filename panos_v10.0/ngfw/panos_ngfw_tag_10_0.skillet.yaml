@@ -15,13 +15,11 @@ variables:
 snippets:
 
 -   name: ironskillet_tag_outbound
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
     element: |-
-		<tag>
-			<entry name="Outbound">
-				<comments>Outbound to the Internet</comments>
-			</entry>
-		</tag>
+		<entry name="Outbound">
+			<comments>Outbound to the Internet</comments>
+		</entry>
 
 -   name: ironskillet_tag_inbound
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
