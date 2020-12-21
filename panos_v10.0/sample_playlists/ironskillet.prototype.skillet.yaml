@@ -1,0 +1,79 @@
+name: panos_ngfw_ironskillet_prototype
+label: PAN-OS NGFW IronSkillet
+description: |-
+  group of snippets for ironskillet configuration
+type: panos
+labels:
+  collection:
+    - IronSkillet Prototype
+
+snippets:
+
+  # IronSkillet baseline
+  # current load requires zone protect profiles, profiles, groups from IronSkillet
+  - name: panos_ngfw_device_setting_10_0
+    include: panos_ngfw_device_setting_10_0
+  - name: panos_ngfw_device_system_10_0
+    include: panos_ngfw_device_system_10_0
+    include_variables: all
+  - name: panos_ngfw_zone_protection_10_0
+    include: panos_ngfw_zone_protection_10_0
+  # tag object
+  - name: panos_ngfw_tag_10_0
+    include: panos_ngfw_tag_10_0
+  # security profiles and profile groups
+  - name: panos_ngfw_profile_wildfire_analysis_10_0
+    include: panos_ngfw_profile_wildfire_analysis_10_0
+    include_snippets:
+      - name: ironskillet_outbound
+      - name: ironskillet_alert_all
+  - name: panos_ngfw_profile_antivirus_10_0
+    include: panos_ngfw_profile_antivirus_10_0
+    include_snippets:
+      - name: ironskillet_antivirus_alert_all
+      - name: ironskillet_antivirus_outbound
+  - name: panos_ngfw_profile_custom_urlFiltering_10_0
+    include: panos_ngfw_profile_custom_urlFiltering_10_0
+  - name: panos_ngfw_profile_urlFiltering_10_0
+    include: panos_ngfw_profile_urlFiltering_10_0
+    include_snippets:
+      - name: ironskillet_url_outbound
+      - name: ironskillet_url_alert_all
+  - name: panos_ngfw_profile_vulnerability_10_0
+    include: panos_ngfw_profile_vulnerability_10_0
+    include_snippets:
+      - name: ironskillet_vulnerability_outbound
+      - name: ironskillet_vulnerability_alert_all
+  - name: panos_ngfw_profile_spyware_10_0
+    include: panos_ngfw_profile_spyware_10_0
+    include_snippets:
+      - name: ironskillet_spyware_outbound
+      - name: ironskillet_spyware_alert_all
+    include_variables: all
+  - name: panos_ngfw_profile_file-blocking_10_0
+    include: panos_ngfw_profile_file-blocking_10_0
+    include_snippets:
+      - name: ironskillet_file_blocking_outbound
+      - name: ironskillet_file_blocking_alert_all
+  - name: panos_ngfw_profile_group_10_0
+    include: panos_ngfw_profile_group_10_0
+    include_snippets:
+      - name: ironskillet_profile_group_outbound
+      - name: ironskillet_profile_group_alert_all
+      - name: ironskillet_profile_group_default
+
+
+
+  # demo specific config items different from day one IronSkillet settings
+  - name: demo_config_snippets
+    include: panos_demo_snippets_device_admin
+    include_snippets:
+      - name: panos_idle_timeout_60min
+
+  # layer3 internet gateway snippets
+  - name: layer3_config_group
+    include:
+      - name: panos_network_snippets_layer3
+      - name: panos_network_snippets_dhcp_server_basic
+      - name: panos_network_snippets_nat_dipp
+      - name: panos_policy_snippets_outbound_security_rules
