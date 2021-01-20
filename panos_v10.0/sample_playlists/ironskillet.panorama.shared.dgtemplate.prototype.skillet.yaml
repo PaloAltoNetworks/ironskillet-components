@@ -9,30 +9,50 @@ labels:
 
 snippets:
   # template object
-  panorama_template_10_0
+  - name: panorama_template_10_0
+    include: panorama_template_10_0
   # device settings
-  panorama_device_system_shared_10_0
-  panorama_device_setting_10_0
-  panorama_device_mgt_config_10_0
+  - name: panorama_device_system_shared_10_0
+    include: panorama_device_system_shared_10_0
+  - name: panorama_device_setting_10_0
+    include: panorama_device_setting_10_0
+  - name: panorama_device_mgt_config_10_0
+    include: panorama_device_mgt_config_10_0
   # shared settings
-  panorama_shared_log_settings_10_0
+  - name: panorama_shared_log_settings_10_0
+    include: panorama_shared_log_settings_10_0
   # zones
-  panorama_zone_protection_profile_10_0
+  - name: panorama_zone_protection_profile_10_0
+    include: panorama_zone_protection_profile_10_0
   # tag object
-  panorama_tag_10_0
+  - name: panorama_tag_10_0
+    include: panorama_tag_10_0
   # log settings
-  panorama_log_settings_profiles_10_0
+  - name: panorama_log_settings_profiles_10_0
+    include: panorama_log_settings_profiles_10_0
   # profiles
-  panorama_profiles_custom_url_category_10_0
-  panorama_profiles_decryption_10_0
-  panorama_profiles_virus_10_0
-  panorama_profiles_spyware_10_0
-  panorama_profiles_vulnerability_10_0
-  panorama_profiles_file_blocking_10_0
-  panorama_profiles_url_filtering_10_0
-  panorama_profiles_wildfire_analysis_10_0
-  panorama_profile_group_10_0
+  - name: panorama_profiles_custom_url_category_10_0
+    include: panorama_profiles_custom_url_category_10_0
+  - name: panorama_profiles_decryption_10_0
+    include: panorama_profiles_decryption_10_0
+  - name: panorama_profiles_virus_10_0
+    include: panorama_profiles_virus_10_0
+  - name: panorama_profiles_spyware_10_0
+    include: panorama_profiles_spyware_10_0
+  - name: panorama_profiles_vulnerability_10_0
+    include: panorama_profiles_vulnerability_10_0
+  - name: panorama_profiles_file_blocking_10_0
+    include: panorama_profiles_file_blocking_10_0
+  - name: panorama_profiles_url_filtering_10_0
+    include: panorama_profiles_url_filtering_10_0
+  - name: panorama_profiles_wildfire_analysis_10_0
+    include: panorama_profiles_wildfire_analysis_10_0
+  - name: panorama_profile_group_10_0
+    include: panorama_profile_group_10_0
   # rulebase
-  panorama_post_rulebase_default_security_rules_10_0
-  panorama_pre_rulebase_security_10_0
-  panorama_pre_rulebase_decryption_10_0
+  - name: panorama_post_rulebase_default_security_rules_10_0
+    include: panorama_post_rulebase_default_security_rules_10_0
+  - name: panorama_pre_rulebase_security_10_0
+    include: panorama_pre_rulebase_security_10_0
+  - name: panorama_pre_rulebase_decryption_10_0
+    include: panorama_pre_rulebase_decryption_10_0
