@@ -1,0 +1,13 @@
+name: panos_panorama_notshared_ironskillet_prototype
+label: PAN-OS NGFW IronSkillet
+description: |-
+  group of snippets for ironskillet configuration
+type: panos
+labels:
+  collection:
+    - IronSkillet Prototype Playlists
+
+snippets:
+
+  # IronSkillet baseline
+  # current load requires zone protect profiles, profiles, groups from IronSkillet

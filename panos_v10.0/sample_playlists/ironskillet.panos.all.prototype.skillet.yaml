@@ -5,7 +5,7 @@ description: |-
 type: panos
 labels:
   collection:
-    - IronSkillet Prototype
+    - IronSkillet Prototype Playlists
 
 snippets:
 
@@ -15,7 +15,6 @@ snippets:
     include: panos_ngfw_device_setting_10_0
   - name: panos_ngfw_device_system_10_0
     include: panos_ngfw_device_system_10_0
-    include_variables: all
   - name: panos_ngfw_zone_protection_10_0
     include: panos_ngfw_zone_protection_10_0
   # tag object
@@ -62,18 +61,3 @@ snippets:
       - name: ironskillet_profile_group_alert_all
       - name: ironskillet_profile_group_default
 
-
-
-  # demo specific config items different from day one IronSkillet settings
-  - name: demo_config_snippets
-    include: panos_demo_snippets_device_admin
-    include_snippets:
-      - name: panos_idle_timeout_60min
-
-  # layer3 internet gateway snippets
-  - name: layer3_config_group
-    include:
-      - name: panos_network_snippets_layer3
-      - name: panos_network_snippets_dhcp_server_basic
-      - name: panos_network_snippets_nat_dipp
-      - name: panos_policy_snippets_outbound_security_rules
