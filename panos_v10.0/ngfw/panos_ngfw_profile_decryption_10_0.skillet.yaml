@@ -7,14 +7,14 @@ description: |-
 type: panos
 labels:
     collection:
-      - PAN-OS
+      - IronSkillet 10.0 PAN-OS Snippets
 
 variables:
 
 
 snippets:
 
--   name: ironskillet_decryption_outbound
+-   name: ironskillet_decryption_profile
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/decryption
     element: |-
       <entry name="Recommended_Decryption_Profile">

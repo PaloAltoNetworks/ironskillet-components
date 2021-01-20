@@ -7,7 +7,7 @@ description: |-
 type: panos
 labels:
     collection:
-      - PAN-OS
+      - IronSkillet 10.0 PAN-OS Snippets
 
 variables:
 

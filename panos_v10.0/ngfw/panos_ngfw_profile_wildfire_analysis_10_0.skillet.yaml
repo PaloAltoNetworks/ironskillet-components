@@ -7,14 +7,14 @@ description: |-
 type: panos
 labels:
     collection:
-      - PAN-OS
+      - IronSkillet 10.0 PAN-OS Snippets
 
 variables:
 
 
 snippets:
 
--   name: ironskillet_outbound
+-   name: ironskillet_wildfire_outbound
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/wildfire-analysis
     element: |-
       <entry name="Outbound-WF">
@@ -32,7 +32,7 @@ snippets:
         </rules>
       </entry>
 
--   name: ironskillet_inbound
+-   name: ironskillet_wildfire_inbound
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/wildfire-analysis
     element: |-
       <entry name="Inbound-WF">
@@ -50,7 +50,7 @@ snippets:
         </rules>
       </entry>
 
--   name: ironskillet_internal
+-   name: ironskillet_wildfire_internal
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/wildfire-analysis
     element: |-
       <entry name="Internal-WF">
@@ -68,7 +68,7 @@ snippets:
         </rules>
       </entry>
 
--   name: ironskillet_alert_all
+-   name: ironskillet_wildfire_alert_all
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/wildfire-analysis
     element: |-
       <entry name="Alert-Only-WF">

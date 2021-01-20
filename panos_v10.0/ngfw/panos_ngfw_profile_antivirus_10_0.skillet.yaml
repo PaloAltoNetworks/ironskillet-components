@@ -1,13 +1,13 @@
 # panos antivirus configuration snippets
 
 name: panos_ngfw_profile_antivirus_10_0
-label: PAN_OS NGFW Profiles - AntiVirus
+label: PAN_OS NGFW Profiles - Antivirus
 description: |-
-    reference AntiVirus configuration snippets
+    reference antivirus configuration snippets
 type: panos
 labels:
     collection:
-      - PAN-OS
+      - IronSkillet 10.0 PAN-OS Snippets
 
 variables:
 
