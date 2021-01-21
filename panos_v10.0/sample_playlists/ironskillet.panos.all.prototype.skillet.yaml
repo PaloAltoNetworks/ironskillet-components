@@ -27,7 +27,7 @@ snippets:
   - name: panos_ngfw_shared_log_settings_10_0
     include: panos_ngfw_shared_log_settings_10_0
   - name: panos_ngfw_shared_log_settings_email_profile_10_0
-    include:panos_ngfw_shared_log_settings_email_profile_10_0
+    include: panos_ngfw_shared_log_settings_email_profile_10_0
   - name: panos_ngfw_shared_log_settings_email_system_critical_10_0
     include: panos_ngfw_shared_log_settings_email_system_critical_10_0
   # tag object
