@@ -7,6 +7,9 @@ labels:
   collection:
     - IronSkillet Prototype Playlists
 
+variables:
+
+
 snippets:
 
   # IronSkillet baseline

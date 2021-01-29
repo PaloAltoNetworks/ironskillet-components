@@ -7,6 +7,9 @@ labels:
   collection:
     - IronSkillet Prototype Playlists
 
+variables:
+
+
 snippets:
   # template object
   - name: panorama_template_10_0

@@ -7,6 +7,9 @@ labels:
   collection:
     - IronSkillet Prototype Playlists
 
+variables:
+
+
 snippets:
   # panorama settings
   - name: panorama_system_mgmt_ip_10_0

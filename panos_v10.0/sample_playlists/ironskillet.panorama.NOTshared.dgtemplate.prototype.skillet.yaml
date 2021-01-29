@@ -7,4 +7,16 @@ labels:
   collection:
     - IronSkillet Prototype Playlists
 
+variables:
+
+
 snippets:
+
+  - name: panos_ngfw_device_system_mgmt_ip_10_0
+    include: panos_ngfw_device_system_mgmt_ip_10_0
+    include_snippets:
+      - name: x1
+        xpath: new/path
+  - name: panos_ngfw_device_system_dns_10_0
+    include: panos_ngfw_device_system_dns_10_0
+    xpath: new/path
