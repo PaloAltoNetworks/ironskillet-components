@@ -73,10 +73,6 @@ snippets:
           </dhcp-client>
         {% endif %}
       </type>
-
--   name: ironskillet_system_managemnt_ip_static
-    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
-    element: |-
       {%- if PANORAMA_TYPE == "static" %}
       <ip-address>{{ PANORAMA_IP }}</ip-address>
       <netmask>{{ PANORAMA_MASK }}</netmask>
