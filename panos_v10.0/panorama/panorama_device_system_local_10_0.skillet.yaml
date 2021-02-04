@@ -15,6 +15,11 @@ variables:
     description: Device Name for NGFW
     default: sample
     type_hint: text
+  - name: STACK
+    description: Template stack name for Panorama
+    default: sample_stack
+    type_hint: text
+    help_text: creates a sample template stack with IronSkillet configuration elements
   - name: MGMT_TYPE
     description: firewall management IP type
     default: dhcp-client
@@ -49,7 +54,7 @@ variables:
 snippets:
 
 -   name: ironskillet_device_system_hostname
-    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     element: |-
       <hostname>{{ FW_NAME }}</hostname>
 
