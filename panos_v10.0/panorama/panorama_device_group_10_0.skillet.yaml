@@ -20,7 +20,7 @@ variables:
 snippets:
 
 -   name: ironskillet_device_setting_ctd
-    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group
     element: |-
       <entry name="{{ DEVICE_GROUP }}">
        <devices></devices>
