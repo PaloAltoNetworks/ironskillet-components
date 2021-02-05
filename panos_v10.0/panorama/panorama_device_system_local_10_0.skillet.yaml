@@ -59,7 +59,7 @@ snippets:
       <hostname>{{ FW_NAME }}</hostname>
 
 -   name: ironskillet_device_system_mgmt_type
-    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     element: |-
       {%- if MGMT_TYPE == "static" %}
       <type>
