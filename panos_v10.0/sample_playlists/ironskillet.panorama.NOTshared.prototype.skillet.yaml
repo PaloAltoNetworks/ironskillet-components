@@ -35,7 +35,17 @@ snippets:
     include: panorama_device_system_local_10_0
   - name: panorama_device_system_shared_10_0
     include: panorama_device_system_shared_10_0
-    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    include_snippets:
+      - name: ironskillet_device_system_dynamic_updates
+        xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+      - name: ironskillet_device_system_snmp
+        xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+      - name: ironskillet_device_system_dns
+        xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+      - name: ironskillet_device_system_ntp
+        xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+      - name: ironskillet_device_system_timezone
+        xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
   - name: panorama_device_setting_10_0
     include: panorama_device_setting_10_0
     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
