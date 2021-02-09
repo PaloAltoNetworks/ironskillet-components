@@ -1,7 +1,7 @@
 name: ironskillet_panorama_notshared_dgtemplate_all_prototype_10_0
 label: Panorama Notshared DGTemplate IronSkillet 10.0
 description: |-
-  group of snippets for ironskillet 10.0 panorama notshared dgtemplate configuration
+  group of snippets for ironskillet 10.0 panorama notshared configuration
 type: panorama
 labels:
   collection:
@@ -22,29 +22,14 @@ variables:
 
 snippets:
 
-  # panorama settings
-  - name: panorama_system_mgmt_ip_10_0
-    include: panorama_system_mgmt_ip_10_0
-  - name: panorama_system_10_0
-    include: panorama_system_10_0
-  - name: panorama_setting_10_0
-    include: panorama_setting_10_0
-  - name: panorama_mgt_config_users_10_0
-    include: panorama_mgt_config_users_10_0
-  - name: panorama_log_settings_10_0
-    include: panorama_log_settings_10_0
-  - name: panorama_mgt_config_pwd_10_0
-    include: panorama_mgt_config_pwd_10_0
-  # log collector/device group
-  - name: panorama_log_collector_group_10_0
-    include: panorama_log_collector_group_10_0
-  - name: panorama_device_group_10_0
-    include: panorama_device_group_10_0
   # template
   - name: panorama_template_10_0
     include: panorama_template_10_0
   - name: panorama_template_stack_10_0
     include: panorama_template_stack_10_0
+  # log settings
+  - name: panorama_log_settings_10_0
+    include: panorama_log_settings_10_0
   # device settings
   - name: panorama_device_system_local_10_0
     include: panorama_device_system_local_10_0
@@ -113,6 +98,9 @@ snippets:
     include_snippets:
       - name: ironskillet_zone_protection
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile
+  # device group
+  - name: panorama_device_group_10_0
+    include: panorama_device_group_10_0
   # tag
   - name: panorama_tag_10_0
     include: panorama_tag_10_0
