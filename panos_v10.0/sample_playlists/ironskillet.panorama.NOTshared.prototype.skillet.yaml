@@ -35,7 +35,7 @@ snippets:
     include: panorama_device_system_local_10_0
   - name: panorama_device_system_shared_10_0
     include: panorama_device_system_shared_10_0
-    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='not-shared-all']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
   - name: panorama_device_setting_10_0
     include: panorama_device_setting_10_0
     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
