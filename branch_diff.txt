@@ -1,0 +1,26 @@
+diff --git a/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.dgtemplate.prototype.skillet.yaml b/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.dgtemplate.prototype.skillet.yaml
+index 18084cd..ff92c9c 100644
+--- a/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.dgtemplate.prototype.skillet.yaml
++++ b/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.dgtemplate.prototype.skillet.yaml
+@@ -50,7 +50,7 @@ snippets:
+     include: panorama_device_system_local_10_0
+   - name: panorama_device_system_shared_10_0
+     include: panorama_device_system_shared_10_0
+-    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
++    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='not-shared-dg']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+   - name: panorama_device_setting_10_0
+     include: panorama_device_setting_10_0
+     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+diff --git a/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.prototype.skillet.yaml b/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.prototype.skillet.yaml
+index 2c83f6b..d46d0c2 100644
+--- a/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.prototype.skillet.yaml
++++ b/panos_v10.0/sample_playlists/ironskillet.panorama.NOTshared.prototype.skillet.yaml
+@@ -35,7 +35,7 @@ snippets:
+     include: panorama_device_system_local_10_0
+   - name: panorama_device_system_shared_10_0
+     include: panorama_device_system_shared_10_0
+-    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
++    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='not-shared-all']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+   - name: panorama_device_setting_10_0
+     include: panorama_device_setting_10_0
+     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
