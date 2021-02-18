@@ -88,3 +88,4 @@ snippets:
       <netmask>{{ PANORAMA_MASK }}</netmask>
       <default-gateway>{{ PANORAMA_DG }}</default-gateway>
       {% endif %}
+    when: config_mgmt_intf_panorama == 'yes'

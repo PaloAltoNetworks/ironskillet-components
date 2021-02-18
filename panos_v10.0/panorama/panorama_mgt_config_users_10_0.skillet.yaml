@@ -45,3 +45,4 @@ snippets:
           </role-based>
         </permissions>
       </entry>
+    when: config_admin_panorama == 'yes'

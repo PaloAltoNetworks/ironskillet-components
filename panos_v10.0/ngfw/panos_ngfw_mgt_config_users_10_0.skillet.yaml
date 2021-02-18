@@ -11,6 +11,16 @@ labels:
 
 variables:
 
+  - name: config_admin_user
+    description: Configure the admin user and password
+    default: 'no'
+    type_hint: dropdown
+    help_text: Set to NO if the IronSkillet config is being applied to a device with an existing admin superuser
+    dd_list:
+      - key: 'yes'
+        value: 'yes'
+      - key: 'no'
+        value: 'no'
   - name: ADMINISTRATOR_USERNAME
     description: admin username
     default: adminuser
@@ -39,3 +49,4 @@ snippets:
           </role-based>
         </permissions>
       </entry>
+    when: config_admin_user == 'yes'
