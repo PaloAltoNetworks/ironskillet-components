@@ -35,6 +35,7 @@ snippets:
     include: panorama_device_system_local_10_0
   - name: panorama_device_system_shared_10_0
     include: panorama_device_system_shared_10_0
+    include_variables: all
     include_snippets:
       - name: ironskillet_device_system_dynamic_updates
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
@@ -48,6 +49,7 @@ snippets:
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
   - name: panorama_device_setting_10_0
     include: panorama_device_setting_10_0
+    include_variables: all
     include_snippets:
       - name: ironskillet_device_setting_ctd
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
@@ -65,6 +67,7 @@ snippets:
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
   - name: panorama_device_mgt_config_10_0
     include: panorama_device_mgt_config_10_0
+    include_variables: all
     include_snippets:
       - name: ironskillet_device_mgt_users
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/mgt-config
@@ -73,6 +76,7 @@ snippets:
   # shared log settings
   - name: panorama_shared_log_settings_10_0
     include: panorama_shared_log_settings_10_0
+    include_variables: all
     include_snippets:
       - name: ironskillet_shared_log_settings_email_profile
         xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack/entry[@name='{{ STACK }}']/config/shared/log-settings
@@ -149,6 +153,7 @@ snippets:
         xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/profiles/virus
   - name: panorama_profiles_spyware_10_0
     include: panorama_profiles_spyware_10_0
+    include_variables: all
     include_snippets:
       - name: ironskillet_spyware_outbound
         xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/profiles/spyware
@@ -223,6 +228,7 @@ snippets:
         xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/post-rulebase/default-security-rules
   - name: panorama_pre_rulebase_security_10_0
     include: panorama_pre_rulebase_security_10_0
+    include_variables: all
     include_snippets:
       - name: ironskillet_pre_rulebase_security
         xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICE_GROUP }}']/pre-rulebase
