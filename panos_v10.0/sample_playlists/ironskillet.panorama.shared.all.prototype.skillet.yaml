@@ -18,6 +18,10 @@ snippets:
     include: panorama_system_10_0
   - name: panorama_setting_10_0
     include: panorama_setting_10_0
+    include_variables:
+      - name: PANORAMA_TYPE
+      - name: PANORAMA_NAME
+      - name: API_KEY_LIFETIME
   - name: panorama_mgt_config_users_10_0
     include: panorama_mgt_config_users_10_0
   - name: panorama_mgt_config_pwd_10_0
