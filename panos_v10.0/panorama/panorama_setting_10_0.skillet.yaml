@@ -28,16 +28,16 @@ variables:
     description: Panorama hostname
     default: panorama01
     type_hint: text
-  - name: ADMINISTRATOR_USERNAME
-    description: admin username
-    default: adminuser
-    type_hint: text
-    help_text: if the user opts out of the Panorama admin config, this user will still be applied as a firewall adminstrator
   - name: API_KEY_LIFETIME
     description: lifetime for the api key in minutes
     default: 525600
     type_hint: text
     help_text: sets the expiration period for generated API keys
+  - name: ADMINISTRATOR_USERNAME
+    description: admin username
+    default: adminuser
+    type_hint: text
+    help_text: if the user opts out of the Panorama admin config, this user will still be applied as a firewall adminstrator
 
 snippets:
 
