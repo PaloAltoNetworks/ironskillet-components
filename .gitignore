@@ -5,3 +5,9 @@
 # code files
 test.py
 # Mac
+
+# test files
+__pycache__
+venv*
+.tox
+.pytest_cache

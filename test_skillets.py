@@ -1,5 +1,6 @@
-from skilletlib import SkilletLoader
 import logging
+
+from skilletlib import SkilletLoader
 
 logger = logging.getLogger(__name__)
 
@@ -35,15 +36,24 @@ def debug_all_skillets_in_dir(directory_to_test: str):
 
 
 def test_panos_v9_skillets_can_load():
-   return debug_skillet_can_load_in_dir('./panos_v9.1')
+    return debug_skillet_can_load_in_dir('./panos_v9.1')
+
 
 def test_panos_v10_skillets_can_load():
-   return debug_skillet_can_load_in_dir('./panos_v10.0')
+    return debug_skillet_can_load_in_dir('./panos_v10.0')
+
+
+def test_validation_skillets_can_load():
+    return debug_skillet_can_load_in_dir('./validations')
+
 
 def test_panos_v90_skillet_variables():
     return debug_all_skillets_in_dir('./panos_v9.1')
 
+
 def test_panos_v10_skillet_variables():
     return debug_all_skillets_in_dir('./panos_v10.0')
-        
 
+
+def test_validation_skillet_variables():
+    return debug_all_skillets_in_dir('./validations')
