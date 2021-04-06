@@ -1,8 +1,6 @@
 import logging
-import skilletlib
 
 from skilletlib import SkilletLoader
-from tests import test_skillet_include
 
 logger = logging.getLogger(__name__)
 
