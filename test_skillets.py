@@ -124,23 +124,23 @@ def test_validation_skillet_variables():
 
 # Testing skillet includes for playlists
 def test_panorama_shared_all_prototype():
-    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_shared_all_prototype_10_0', 103, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
+    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_shared_all_prototype_10_0', 108, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
 
 
 def test_panorama_shared_dgtemplate_prototype():
-    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_shared_dgtemplate_all_prototype_10_0', 69, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
+    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_shared_dgtemplate_all_prototype_10_0', 74, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
 
 
 def test_panorama_notshared_dgtemplate_prototype():
-    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_notshared_dgtemplate_all_prototype_10_0', 87, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
+    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_notshared_dgtemplate_all_prototype_10_0', 92, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
 
 
 def test_panorama_notshared_prototype():
-    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_notshared_all_prototype_10_0', 103, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
+    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panorama_notshared_all_prototype_10_0', 108, 'panorama_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
 
 
 def test_panos_all_prototype():
-    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panos_all_prototype_10_0', 80, 'panos_ngfw_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
+    return debug_skillet_includes('./panos_v10.0', 'ironskillet_panos_all_prototype_10_0', 85, 'panos_ngfw_tag_10_0.ironskillet_tag_outbound', 'API_KEY_LIFETIME')
 
 
 
