@@ -1,1 +1,0 @@
-# Panorama specific configuration elements
