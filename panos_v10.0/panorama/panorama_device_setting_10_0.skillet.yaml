@@ -167,3 +167,10 @@ snippets:
         <check-timestamp-option>yes</check-timestamp-option>
         <strip-mptcp-option>yes</strip-mptcp-option>
       </tcp>
+
+-   name: ironskillet_device_setting_packet_buffer
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='iron-skillet']/config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+    element: |-
+      <session>
+        <packet-buffer-protection-enable>yes</packet-buffer-protection-enable>
+      </session>
