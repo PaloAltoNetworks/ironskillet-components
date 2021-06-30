@@ -22,7 +22,7 @@ snippets:
 -   name: ironskillet_template_stack
     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack
     element: |-
-      <entry name="{{ STACK }}">
+      <entry name="{{STACK}}">
         <templates>
           <member>iron-skillet</member>
         </templates>
