@@ -306,7 +306,7 @@ snippets:
         </rules>
       </entry>
 
--   name: ironskillet_exception
+-   name: ironskillet_spyware_exception
     xpath: /config/shared/profiles/spyware
     element: |-
       <entry name="Exception-AS">
