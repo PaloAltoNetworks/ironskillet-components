@@ -68,6 +68,9 @@ snippets:
           <entry name="Executable Linked Format">
             <mlav-policy-action>enable(alert-only)</mlav-policy-action>
           </entry>
+          <entry name="MSOffice">
+            <mlav-policy-action>enable(alert-only)</mlav-policy-action>
+          </entry>
         </mlav-engine-filebased-enabled>
       </entry>
 
@@ -123,6 +126,9 @@ snippets:
             <mlav-policy-action>enable</mlav-policy-action>
           </entry>
           <entry name="Executable Linked Format">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="MSOffice">
             <mlav-policy-action>enable</mlav-policy-action>
           </entry>
         </mlav-engine-filebased-enabled>
@@ -182,6 +188,9 @@ snippets:
           <entry name="Executable Linked Format">
             <mlav-policy-action>enable</mlav-policy-action>
           </entry>
+          <entry name="MSOffice">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
         </mlav-engine-filebased-enabled>
       </entry>
 
@@ -237,6 +246,9 @@ snippets:
             <mlav-policy-action>enable</mlav-policy-action>
           </entry>
           <entry name="Executable Linked Format">
+            <mlav-policy-action>enable</mlav-policy-action>
+          </entry>
+          <entry name="MSOffice">
             <mlav-policy-action>enable</mlav-policy-action>
           </entry>
         </mlav-engine-filebased-enabled>
