@@ -1,13 +1,13 @@
 # panos custom url-filtering configuration snippets
 
-name: panos_ngfw_profile_custom_urlFiltering_10_1
+name: panos_ngfw_profile_custom_urlFiltering_10_2
 label: PAN_OS NGFW Profiles - URL Filtering
 description: |-
     reference custom URL Filtering configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 

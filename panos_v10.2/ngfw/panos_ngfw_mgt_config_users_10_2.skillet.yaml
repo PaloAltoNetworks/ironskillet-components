@@ -1,13 +1,13 @@
 # panos mgmt users configuration snippets
 
-name: panos_ngfw_mgt_config_users_10_1
+name: panos_ngfw_mgt_config_users_10_2
 label: PAN_OS NGFW Mgmt Config - Users
 description: |-
     reference mgmt users configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 

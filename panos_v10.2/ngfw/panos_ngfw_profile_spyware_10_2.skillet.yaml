@@ -1,13 +1,13 @@
 # panos spyware configuration snippets
 
-name: panos_ngfw_profile_spyware_10_1
+name: panos_ngfw_profile_spyware_10_2
 label: PAN_OS NGFW Profiles - spyware
 description: |-
     reference spyware configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 
@@ -384,72 +384,4 @@ snippets:
             <packet-capture>disable</packet-capture>
           </entry>
         </rules>
-      </entry>
-
--   name: ironskillet_spyware_exception
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/spyware
-    element: |-
-      <entry name="Exception-AS">
-        <description>Used for exception cases not part of the recommended practice</description>
-        <botnet-domains>
-          <lists>
-            <entry name="default-paloalto-dns">
-              <packet-capture>single-packet</packet-capture>
-              <action>
-                <sinkhole/>
-              </action>
-            </entry>
-          </lists>
-          <dns-security-categories>
-            <entry name="pan-dns-sec-benign">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-cc">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-ddns">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-grayware">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-malware">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-parked">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-phishing">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-proxy">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-            <entry name="pan-dns-sec-recent">
-              <log-level>default</log-level>
-              <action>default</action>
-              <packet-capture>disable</packet-capture>
-            </entry>
-          </dns-security-categories>
-          <sinkhole>
-            <ipv4-address>{{ SINKHOLE_IPV4 }}</ipv4-address>
-            <ipv6-address>{{ SINKHOLE_IPV6 }}</ipv6-address>
-          </sinkhole>
-        </botnet-domains>
       </entry>

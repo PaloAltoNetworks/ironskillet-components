@@ -1,13 +1,13 @@
 # panos shared log settings configuration snippets
 
-name: panos_ngfw_shared_log_settings_email_system_critical_10_1
+name: panos_ngfw_shared_log_settings_email_system_critical_10_2
 label: PAN_OS NGFW Shared Log Settings - Email System Critical
 description: |-
     reference shared log settings email system critical configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 

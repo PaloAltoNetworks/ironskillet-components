@@ -2,14 +2,14 @@
 # not included in IronSkillet full playlsit currently
 # xpath is nontraditional, and
 
-name: panos_ngfw_forward_decrypt_10_1
+name: panos_ngfw_forward_decrypt_10_2
 label: PAN_OS NGFW Device - Forward Decrypt
 description: |-
     reference device setting forward decrypt snippet
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 

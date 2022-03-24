@@ -1,13 +1,13 @@
 # panos report group configuration snippets
 
-name: panos_ngfw_report_group_simple_10_1
+name: panos_ngfw_report_group_simple_10_2
 label: PAN_OS NGFW Report Group
 description: |-
     reference report group configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 

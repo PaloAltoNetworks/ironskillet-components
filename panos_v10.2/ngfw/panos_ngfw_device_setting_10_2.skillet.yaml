@@ -1,13 +1,13 @@
 # panos device setting configuration snippets
 
-name: panos_ngfw_device_setting_10_1
+name: panos_ngfw_device_setting_10_2
 label: PAN_OS NGFW Device - Setting
 description: |-
     reference device setting configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 
@@ -112,7 +112,7 @@ snippets:
             <size-limit>20</size-limit>
           </entry>
          </file-size-limit>
-        <report-benign-file>yes</report-benign-file>
+        <report-benign-file>no</report-benign-file>
         <report-grayware-file>yes</report-grayware-file>
       </wildfire>
 

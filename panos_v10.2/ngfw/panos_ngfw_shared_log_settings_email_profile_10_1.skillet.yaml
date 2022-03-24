@@ -1,13 +1,13 @@
 # panos shared log settings configuration snippets
 
-name: panos_ngfw_shared_log_settings_email_profile_10_1
+name: panos_ngfw_shared_log_settings_email_profile_10_2
 label: PAN_OS NGFW Shared Log Settings - Email Profile
 description: |-
     reference shared log settings email profile configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 

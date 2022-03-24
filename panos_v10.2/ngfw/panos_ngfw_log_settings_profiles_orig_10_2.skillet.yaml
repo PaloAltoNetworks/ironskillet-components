@@ -1,19 +1,19 @@
 # panos log settings configuration snippets
 
-name: panos_ngfw_log_settings_profiles_10_1
-label: PAN_OS NGFW Log Settings Profiles
+name: panos_ngfw_log_settings_profiles_orig_10_2
+label: PAN_OS NGFW Log Settings Profiles- Orig
 description: |-
-    log forwarding profile object configuration
+    reference log settings profiles configuration snippets
 type: panos
 labels:
     collection:
-      - IronSkillet 10.1 PAN-OS Snippets
+      - IronSkillet 10.2 PAN-OS Snippets
 
 variables:
 
 
 snippets:
--   name: ironskillet_log_settings_profiles
+-   name: ironskillet_log_settings_profiles_orig
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/log-settings/profiles
     element: |-
       <entry name="default">
@@ -33,6 +33,24 @@ snippets:
             <send-syslog>
               <member>Sample_Syslog_Profile</member>
             </send-syslog>
+          </entry>
+          <entry name="Email_Malicious_Verdicts">
+            <send-email>
+              <member>Sample_Email_Profile</member>
+            </send-email>
+            <action-desc>Email Malicious Wildfire Verdicts</action-desc>
+            <log-type>wildfire</log-type>
+            <filter>(verdict eq malicious)</filter>
+            <send-to-panorama>no</send-to-panorama>
+          </entry>
+          <entry name="Email_Phishing_Verdicts">
+            <send-email>
+              <member>Sample_Email_Profile</member>
+            </send-email>
+            <action-desc>Email Phishing Wildfire Verdicts</action-desc>
+            <log-type>wildfire</log-type>
+            <filter>(verdict eq phishing)</filter>
+            <send-to-panorama>no</send-to-panorama>
           </entry>
           <entry name="Wildfire_Log_Forwarding">
             <log-type>wildfire</log-type>
