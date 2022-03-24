@@ -1,13 +1,13 @@
-# panos tags configuration snippets
+# panorama tag configuration snippets
 
-name: panos_ngfw_tag_10_2
-label: PAN_OS NGFW Tags that can be used in policies
+name: panorama_tag_10_2
+label: Panorama Tag Settings
 description: |-
-  reference tag configuration snippets
-type: panos
+    reference tag configuration snippets
+type: panorama
 labels:
-  collection:
-    - IronSkillet 10.2 PAN-OS Snippets
+    collection:
+      - IronSkillet 10.2 Panorama Snippets
 
 variables:
 
@@ -15,28 +15,28 @@ variables:
 snippets:
 
 -   name: ironskillet_tag_outbound
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+    xpath: /config/shared/tag
     element: |-
       <entry name="Outbound">
           <comments>Outbound to the Internet</comments>
       </entry>
 
 -   name: ironskillet_tag_inbound
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+    xpath: /config/shared/tag
     element: |-
       <entry name="Inbound">
           <comments>Inbound from the Internet</comments>
       </entry>
 
 -   name: ironskillet_tag_internal
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+    xpath: /config/shared/tag
     element: |-
       <entry name="Internal">
           <comments>Internal to Internal</comments>
       </entry>
 
 -   name: ironskillet_tag_ironskillet_version
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+    xpath: /config/shared/tag
     element: |-
       <entry name="iron-skillet-version">
           <comments>version 0.0.1 for 10.2 - version of this IronSkillet template file</comments>
