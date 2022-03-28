@@ -11,11 +11,16 @@ labels:
 
 variables:
 
+  - name: DEVICE_GROUP
+    description: Device-group name for Panorama
+    default: sample_devicegroup
+    type_hint: text
+    help_text: creates a sample device-group with IronSkillet configuration elements
 
 snippets:
 
   - name: bulletproof_ip_edl
-    xpath: /config/devices/entry[@name="localhost.localdomain"]/vsys/entry[@name="vsys1"]
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="{{ DEVICE_GROUP }}"]
     element: |-
       <external-list>
         <entry name="Palo Alto Networks BulletProof IP Addresses">
@@ -29,7 +34,7 @@ snippets:
       </external-list>
 
   - name: tor_exit_edl
-    xpath: /config/devices/entry[@name="localhost.localdomain"]/vsys/entry[@name="vsys1"]
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="{{ DEVICE_GROUP }}"]
     element: |-
       <external-list>
         <entry name="Palo Alto Networks Tor exit IP Addresses">
