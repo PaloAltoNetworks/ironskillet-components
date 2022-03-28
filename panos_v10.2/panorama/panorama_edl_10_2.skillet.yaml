@@ -1,13 +1,11 @@
-# panos antivirus configuration snippets
-
-name: panos_ngfw_edl_10_2
-label: PAN_OS NGFW External Dynamic Lists
+name: panorama_edl_10_2
+label: Panorama External Dynamic Lists
 description: |-
     reference EDL configuration snippets
-type: panos
+type: panorama
 labels:
     collection:
-      - IronSkillet 10.2 PAN-OS Snippets
+      - IronSkillet 10.2 Panorama Snippets
 
 variables:
 
