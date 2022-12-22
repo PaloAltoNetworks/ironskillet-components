@@ -11,11 +11,45 @@ labels:
 
 variables:
 
+  - name: FW_NAME
+    description: Device Name for NGFW
+    default: sample
+    type_hint: text
   - name: STACK
     description: Template stack name for Panorama
     default: sample_stack
     type_hint: text
     help_text: creates a sample template stack with IronSkillet configuration elements
+  - name: MGMT_TYPE
+    description: firewall management IP type
+    default: dhcp-client
+    type_hint: dropdown
+    dd_list:
+      - key: dhcp-client
+        value: dhcp-client
+      - key: static
+        value: static
+  - name: MGMT_IP
+    description: NGFW management IP
+    default: 192.0.2.6
+    type_hint: ip_address
+    toggle_hint:
+      source: MGMT_TYPE
+      value: static
+  - name: MGMT_MASK
+    description: NGFW management netmask
+    type_hint: ip_address
+    default: 255.255.255.0
+    toggle_hint:
+      source: MGMT_TYPE
+      value: static
+  - name: MGMT_DG
+    description: NGFW management default gateway
+    default: 192.0.2.7
+    type_hint: ip_address
+    toggle_hint:
+      source: MGMT_TYPE
+      value: static
 
 snippets:
 
@@ -35,6 +69,38 @@ snippets:
                 <vsys>
                   <entry name="vsys1"/>
                 </vsys>
+                <deviceconfig>
+                  <system>
+                  {%- if MGMT_TYPE == "static" %}
+                  <type>
+                    <static/>
+                  </type>
+                  <ip-address>{{ MGMT_IP }}</ip-address>
+                  <netmask>{{ MGMT_MASK }}</netmask>
+                  <default-gateway>{{ MGMT_DG }}</default-gateway>
+                  {% elif MGMT_TYPE == "dhcp-client" %}
+                  <type>
+                     <dhcp-client>
+                       <send-hostname>yes</send-hostname>
+                       <send-client-id>no</send-client-id>
+                       <accept-dhcp-hostname>no</accept-dhcp-hostname>
+                       <accept-dhcp-domain>no</accept-dhcp-domain>
+                     </dhcp-client>
+                  </type>
+                  <hostname>{{ FW_NAME }}</hostname>
+                  {% else %}
+                  <type>
+                     <dhcp-client>
+                       <send-hostname>yes</send-hostname>
+                       <send-client-id>no</send-client-id>
+                       <accept-dhcp-hostname>no</accept-dhcp-hostname>
+                       <accept-dhcp-domain>no</accept-dhcp-domain>
+                     </dhcp-client>
+                  </type>
+                  <hostname>{{ FW_NAME }}</hostname>
+                  {% endif %}
+                  </system>
+                </deviceconfig>
               </entry>
             </devices>
         </config>
