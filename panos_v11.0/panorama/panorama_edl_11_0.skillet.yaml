@@ -1,0 +1,46 @@
+name: panorama_edl_11_0
+label: Panorama External Dynamic Lists
+description: |-
+    reference EDL configuration snippets
+type: panorama
+labels:
+    collection:
+      - IronSkillet 11.0 Panorama Snippets
+
+variables:
+
+  - name: DEVICE_GROUP
+    description: Device-group name for Panorama
+    default: sample_devicegroup
+    type_hint: text
+    help_text: creates a sample device-group with IronSkillet configuration elements
+
+snippets:
+
+  - name: bulletproof_ip_edl
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="{{ DEVICE_GROUP }}"]
+    element: |-
+      <external-list>
+        <entry name="Palo Alto Networks BulletProof IP Addresses">
+          <type>
+            <predefined-ip>
+              <url>panw-bulletproof-ip-list</url>
+              <description>IP addresses that are provided by bulletproof hosting providers. Because bulletproof hosting providers place few, if any, restrictions on content, attackers can use these services to host and distribute malicious, illegal, and unethical material.</description>
+            </predefined-ip>
+          </type>
+        </entry>
+      </external-list>
+
+  - name: tor_exit_edl
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="{{ DEVICE_GROUP }}"]
+    element: |-
+      <external-list>
+        <entry name="Palo Alto Networks Tor exit IP Addresses">
+          <type>
+            <predefined-ip>
+              <url>panw-torexit-ip-list</url>
+              <description>IP addresses supplied by multiple providers and validated with Palo Alto Networks threat intelligence data as active Tor exit nodes. Traffic from Tor exit nodes are disproportionately associated with malicious activity.</description>
+            </predefined-ip>
+          </type>
+        </entry>
+      </external-list>
